@@ -1,0 +1,16 @@
+PODS:
+  - IGLDropDownMenu (1.6.2)
+
+DEPENDENCIES:
+  - IGLDropDownMenu
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IGLDropDownMenu
+
+SPEC CHECKSUMS:
+  IGLDropDownMenu: ae118618ae858fa66ce7c2ac80ed9124a710b228
+
+PODFILE CHECKSUM: b44219e72724fc49684bfb399b82894ef51af68a
+
+COCOAPODS: 1.6.1

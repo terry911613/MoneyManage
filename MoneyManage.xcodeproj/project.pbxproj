@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		444F176922565F9D003A8E10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176822565F9D003A8E10 /* AppDelegate.swift */; };
-		444F176B22565F9D003A8E10 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176A22565F9D003A8E10 /* FirstViewController.swift */; };
-		444F176D22565F9D003A8E10 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176C22565F9D003A8E10 /* SecondViewController.swift */; };
+		444F176B22565F9D003A8E10 /* ExpenditureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176A22565F9D003A8E10 /* ExpenditureViewController.swift */; };
+		444F176D22565F9D003A8E10 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176C22565F9D003A8E10 /* IncomeViewController.swift */; };
 		444F177022565F9D003A8E10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444F176E22565F9D003A8E10 /* Main.storyboard */; };
 		444F177222565F9E003A8E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 444F177122565F9E003A8E10 /* Assets.xcassets */; };
 		444F177522565F9E003A8E10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444F177322565F9E003A8E10 /* LaunchScreen.storyboard */; };
+		444F177D225664E4003A8E10 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F177C225664E4003A8E10 /* StatisticsViewController.swift */; };
+		444F177F22566635003A8E10 /* AddExpenditureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F177E22566635003A8E10 /* AddExpenditureViewController.swift */; };
+		444F17812256664A003A8E10 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F17802256664A003A8E10 /* AddIncomeViewController.swift */; };
+		97C9B02D323626BAC4457F47 /* Pods_MoneyManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503E18742447A96A002AB7D0 /* Pods_MoneyManage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1393D1CCCB3A2CC7A22E134B /* Pods-MoneyManage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManage.release.xcconfig"; path = "Target Support Files/Pods-MoneyManage/Pods-MoneyManage.release.xcconfig"; sourceTree = "<group>"; };
 		444F176522565F9D003A8E10 /* MoneyManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		444F176822565F9D003A8E10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		444F176A22565F9D003A8E10 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		444F176C22565F9D003A8E10 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		444F176A22565F9D003A8E10 /* ExpenditureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureViewController.swift; sourceTree = "<group>"; };
+		444F176C22565F9D003A8E10 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		444F176F22565F9D003A8E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		444F177122565F9E003A8E10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		444F177422565F9E003A8E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		444F177622565F9E003A8E10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		444F177C225664E4003A8E10 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		444F177E22566635003A8E10 /* AddExpenditureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenditureViewController.swift; sourceTree = "<group>"; };
+		444F17802256664A003A8E10 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
+		503E18742447A96A002AB7D0 /* Pods_MoneyManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC231FE8E9315B59A7C51A8 /* Pods-MoneyManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManage.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManage/Pods-MoneyManage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C9B02D323626BAC4457F47 /* Pods_MoneyManage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1410853B2E65AE05147125D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DC231FE8E9315B59A7C51A8 /* Pods-MoneyManage.debug.xcconfig */,
+				1393D1CCCB3A2CC7A22E134B /* Pods-MoneyManage.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		444F175C22565F9D003A8E10 = {
 			isa = PBXGroup;
 			children = (
 				444F176722565F9D003A8E10 /* MoneyManage */,
 				444F176622565F9D003A8E10 /* Products */,
+				1410853B2E65AE05147125D3 /* Pods */,
+				8FB82760A6FB047F0B595E2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +80,57 @@
 			isa = PBXGroup;
 			children = (
 				444F176822565F9D003A8E10 /* AppDelegate.swift */,
-				444F176A22565F9D003A8E10 /* FirstViewController.swift */,
-				444F176C22565F9D003A8E10 /* SecondViewController.swift */,
-				444F176E22565F9D003A8E10 /* Main.storyboard */,
-				444F177122565F9E003A8E10 /* Assets.xcassets */,
-				444F177322565F9E003A8E10 /* LaunchScreen.storyboard */,
+				444F178222566668003A8E10 /* Controllers */,
+				444F1784225666C0003A8E10 /* Model */,
+				444F178322566686003A8E10 /* Views */,
+				444F1785225666DA003A8E10 /* Supporting Files */,
 				444F177622565F9E003A8E10 /* Info.plist */,
 			);
 			path = MoneyManage;
+			sourceTree = "<group>";
+		};
+		444F178222566668003A8E10 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				444F176A22565F9D003A8E10 /* ExpenditureViewController.swift */,
+				444F177E22566635003A8E10 /* AddExpenditureViewController.swift */,
+				444F176C22565F9D003A8E10 /* IncomeViewController.swift */,
+				444F17802256664A003A8E10 /* AddIncomeViewController.swift */,
+				444F177C225664E4003A8E10 /* StatisticsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		444F178322566686003A8E10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				444F176E22565F9D003A8E10 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		444F1784225666C0003A8E10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		444F1785225666DA003A8E10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				444F177122565F9E003A8E10 /* Assets.xcassets */,
+				444F177322565F9E003A8E10 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8FB82760A6FB047F0B595E2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				503E18742447A96A002AB7D0 /* Pods_MoneyManage.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 444F177922565F9E003A8E10 /* Build configuration list for PBXNativeTarget "MoneyManage" */;
 			buildPhases = (
+				AF927FD504EDAC54E2A3D781 /* [CP] Check Pods Manifest.lock */,
 				444F176122565F9D003A8E10 /* Sources */,
 				444F176222565F9D003A8E10 /* Frameworks */,
 				444F176322565F9D003A8E10 /* Resources */,
+				372A01414BB1AE65A23576D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +201,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		372A01414BB1AE65A23576D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyManage/Pods-MoneyManage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IGLDropDownMenu/IGLDropDownMenu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGLDropDownMenu.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyManage/Pods-MoneyManage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF927FD504EDAC54E2A3D781 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyManage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		444F176122565F9D003A8E10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				444F176D22565F9D003A8E10 /* SecondViewController.swift in Sources */,
+				444F176D22565F9D003A8E10 /* IncomeViewController.swift in Sources */,
 				444F176922565F9D003A8E10 /* AppDelegate.swift in Sources */,
-				444F176B22565F9D003A8E10 /* FirstViewController.swift in Sources */,
+				444F176B22565F9D003A8E10 /* ExpenditureViewController.swift in Sources */,
+				444F17812256664A003A8E10 /* AddIncomeViewController.swift in Sources */,
+				444F177D225664E4003A8E10 /* StatisticsViewController.swift in Sources */,
+				444F177F22566635003A8E10 /* AddExpenditureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +402,7 @@
 		};
 		444F177A22565F9E003A8E10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DC231FE8E9315B59A7C51A8 /* Pods-MoneyManage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +421,7 @@
 		};
 		444F177B22565F9E003A8E10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1393D1CCCB3A2CC7A22E134B /* Pods-MoneyManage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
