@@ -16,6 +16,8 @@
 		444F177D225664E4003A8E10 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F177C225664E4003A8E10 /* StatisticsViewController.swift */; };
 		444F177F22566635003A8E10 /* AddExpenditureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F177E22566635003A8E10 /* AddExpenditureViewController.swift */; };
 		444F17812256664A003A8E10 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F17802256664A003A8E10 /* AddIncomeViewController.swift */; };
+		445DC8F2226721C2009C3121 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 445DC8F0226721C2009C3121 /* DataModel.xcdatamodeld */; };
+		44B282822265A8F700F4F843 /* Expenditure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B282812265A8F700F4F843 /* Expenditure.swift */; };
 		97C9B02D323626BAC4457F47 /* Pods_MoneyManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503E18742447A96A002AB7D0 /* Pods_MoneyManage.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		444F177C225664E4003A8E10 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		444F177E22566635003A8E10 /* AddExpenditureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenditureViewController.swift; sourceTree = "<group>"; };
 		444F17802256664A003A8E10 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
+		445DC8F1226721C2009C3121 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		44B282812265A8F700F4F843 /* Expenditure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenditure.swift; sourceTree = "<group>"; };
 		503E18742447A96A002AB7D0 /* Pods_MoneyManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC231FE8E9315B59A7C51A8 /* Pods-MoneyManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManage.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManage/Pods-MoneyManage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +58,6 @@
 				5DC231FE8E9315B59A7C51A8 /* Pods-MoneyManage.debug.xcconfig */,
 				1393D1CCCB3A2CC7A22E134B /* Pods-MoneyManage.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -112,6 +115,8 @@
 		444F1784225666C0003A8E10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44B282812265A8F700F4F843 /* Expenditure.swift */,
+				445DC8F0226721C2009C3121 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,9 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				444F176D22565F9D003A8E10 /* IncomeViewController.swift in Sources */,
+				445DC8F2226721C2009C3121 /* DataModel.xcdatamodeld in Sources */,
 				444F176922565F9D003A8E10 /* AppDelegate.swift in Sources */,
 				444F176B22565F9D003A8E10 /* ExpenditureViewController.swift in Sources */,
 				444F17812256664A003A8E10 /* AddIncomeViewController.swift in Sources */,
+				44B282822265A8F700F4F843 /* Expenditure.swift in Sources */,
 				444F177D225664E4003A8E10 /* StatisticsViewController.swift in Sources */,
 				444F177F22566635003A8E10 /* AddExpenditureViewController.swift in Sources */,
 			);
@@ -460,6 +467,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		445DC8F0226721C2009C3121 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				445DC8F1226721C2009C3121 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 445DC8F1226721C2009C3121 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 444F175D22565F9D003A8E10 /* Project object */;
 }
