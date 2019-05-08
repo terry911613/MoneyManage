@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443C4A29226F62B800E825D3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 443C4A27226F62B800E825D3 /* DataModel.xcdatamodeld */; };
 		444F176922565F9D003A8E10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176822565F9D003A8E10 /* AppDelegate.swift */; };
 		444F176B22565F9D003A8E10 /* ExpenditureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176A22565F9D003A8E10 /* ExpenditureViewController.swift */; };
 		444F176D22565F9D003A8E10 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F176C22565F9D003A8E10 /* IncomeViewController.swift */; };
@@ -16,13 +17,14 @@
 		444F177D225664E4003A8E10 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F177C225664E4003A8E10 /* StatisticsViewController.swift */; };
 		444F177F22566635003A8E10 /* AddExpenditureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F177E22566635003A8E10 /* AddExpenditureViewController.swift */; };
 		444F17812256664A003A8E10 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F17802256664A003A8E10 /* AddIncomeViewController.swift */; };
-		445DC8F2226721C2009C3121 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 445DC8F0226721C2009C3121 /* DataModel.xcdatamodeld */; };
-		44B282822265A8F700F4F843 /* Expenditure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B282812265A8F700F4F843 /* Expenditure.swift */; };
+		44BF9A9B227B3D37003FDC29 /* EditExpenditureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BF9A9A227B3D37003FDC29 /* EditExpenditureViewController.swift */; };
+		44BF9A9D227B3D50003FDC29 /* EditIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BF9A9C227B3D50003FDC29 /* EditIncomeViewController.swift */; };
 		97C9B02D323626BAC4457F47 /* Pods_MoneyManage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503E18742447A96A002AB7D0 /* Pods_MoneyManage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1393D1CCCB3A2CC7A22E134B /* Pods-MoneyManage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManage.release.xcconfig"; path = "Target Support Files/Pods-MoneyManage/Pods-MoneyManage.release.xcconfig"; sourceTree = "<group>"; };
+		443C4A28226F62B800E825D3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		444F176522565F9D003A8E10 /* MoneyManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		444F176822565F9D003A8E10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		444F176A22565F9D003A8E10 /* ExpenditureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenditureViewController.swift; sourceTree = "<group>"; };
@@ -34,8 +36,8 @@
 		444F177C225664E4003A8E10 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		444F177E22566635003A8E10 /* AddExpenditureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenditureViewController.swift; sourceTree = "<group>"; };
 		444F17802256664A003A8E10 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
-		445DC8F1226721C2009C3121 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		44B282812265A8F700F4F843 /* Expenditure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenditure.swift; sourceTree = "<group>"; };
+		44BF9A9A227B3D37003FDC29 /* EditExpenditureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenditureViewController.swift; sourceTree = "<group>"; };
+		44BF9A9C227B3D50003FDC29 /* EditIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIncomeViewController.swift; sourceTree = "<group>"; };
 		503E18742447A96A002AB7D0 /* Pods_MoneyManage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyManage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC231FE8E9315B59A7C51A8 /* Pods-MoneyManage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyManage.debug.xcconfig"; path = "Target Support Files/Pods-MoneyManage/Pods-MoneyManage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,9 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				444F176822565F9D003A8E10 /* AppDelegate.swift */,
-				444F178222566668003A8E10 /* Controllers */,
 				444F1784225666C0003A8E10 /* Model */,
 				444F178322566686003A8E10 /* Views */,
+				444F178222566668003A8E10 /* Controllers */,
 				444F1785225666DA003A8E10 /* Supporting Files */,
 				444F177622565F9E003A8E10 /* Info.plist */,
 			);
@@ -97,8 +99,10 @@
 			children = (
 				444F176A22565F9D003A8E10 /* ExpenditureViewController.swift */,
 				444F177E22566635003A8E10 /* AddExpenditureViewController.swift */,
+				44BF9A9A227B3D37003FDC29 /* EditExpenditureViewController.swift */,
 				444F176C22565F9D003A8E10 /* IncomeViewController.swift */,
 				444F17802256664A003A8E10 /* AddIncomeViewController.swift */,
+				44BF9A9C227B3D50003FDC29 /* EditIncomeViewController.swift */,
 				444F177C225664E4003A8E10 /* StatisticsViewController.swift */,
 			);
 			path = Controllers;
@@ -115,8 +119,7 @@
 		444F1784225666C0003A8E10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				44B282812265A8F700F4F843 /* Expenditure.swift */,
-				445DC8F0226721C2009C3121 /* DataModel.xcdatamodeld */,
+				443C4A27226F62B800E825D3 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,13 +219,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MoneyManage/Pods-MoneyManage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/IGLDropDownMenu/IGLDropDownMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGLDropDownMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -259,11 +266,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				444F176D22565F9D003A8E10 /* IncomeViewController.swift in Sources */,
-				445DC8F2226721C2009C3121 /* DataModel.xcdatamodeld in Sources */,
+				44BF9A9B227B3D37003FDC29 /* EditExpenditureViewController.swift in Sources */,
+				443C4A29226F62B800E825D3 /* DataModel.xcdatamodeld in Sources */,
 				444F176922565F9D003A8E10 /* AppDelegate.swift in Sources */,
 				444F176B22565F9D003A8E10 /* ExpenditureViewController.swift in Sources */,
 				444F17812256664A003A8E10 /* AddIncomeViewController.swift in Sources */,
-				44B282822265A8F700F4F843 /* Expenditure.swift in Sources */,
+				44BF9A9D227B3D50003FDC29 /* EditIncomeViewController.swift in Sources */,
 				444F177D225664E4003A8E10 /* StatisticsViewController.swift in Sources */,
 				444F177F22566635003A8E10 /* AddExpenditureViewController.swift in Sources */,
 			);
@@ -469,12 +477,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		445DC8F0226721C2009C3121 /* DataModel.xcdatamodeld */ = {
+		443C4A27226F62B800E825D3 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				445DC8F1226721C2009C3121 /* DataModel.xcdatamodel */,
+				443C4A28226F62B800E825D3 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 445DC8F1226721C2009C3121 /* DataModel.xcdatamodel */;
+			currentVersion = 443C4A28226F62B800E825D3 /* DataModel.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

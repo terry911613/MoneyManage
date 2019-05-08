@@ -1,16 +1,26 @@
 PODS:
+  - Charts (3.2.2):
+    - Charts/Core (= 3.2.2)
+  - Charts/Core (3.2.2)
   - IGLDropDownMenu (1.6.2)
+  - ViewAnimator (2.2.2)
 
 DEPENDENCIES:
+  - Charts
   - IGLDropDownMenu
+  - ViewAnimator
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Charts
     - IGLDropDownMenu
+    - ViewAnimator
 
 SPEC CHECKSUMS:
+  Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   IGLDropDownMenu: ae118618ae858fa66ce7c2ac80ed9124a710b228
+  ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 
-PODFILE CHECKSUM: b44219e72724fc49684bfb399b82894ef51af68a
+PODFILE CHECKSUM: 2ffb350c63838827a9cac634563e261f69c402dd
 
 COCOAPODS: 1.6.1

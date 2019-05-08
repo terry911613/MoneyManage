@@ -1,76 +1,64 @@
 //
-//  AddIncomeViewController.swift
+//  EditIncomeViewController.swift
 //  MoneyManage
 //
-//  Created by 李泰儀 on 2019/4/5.
+//  Created by 李泰儀 on 2019/5/2.
 //  Copyright © 2019 TerryLee. All rights reserved.
 //
 
 import UIKit
 import IGLDropDownMenu
 
-class AddIncomeViewController: UIViewController {
-
+class EditIncomeViewController: UIViewController {
+    
     @IBOutlet weak var moneyTextfield: UITextField!
     
+    var editIncomeArray = [Income]()
     var typeDropDownMenu = IGLDropDownMenu()
     var typeArray: NSArray = ["薪水", "獎金", "補助", "投資", "其他"]
     var type: String?
-    var dateText: String?
+    var index: IndexPath?
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let incomeVC = segue.destination as? IncomeViewController
-        
-        if let money = Int64(moneyTextfield.text!),
-            let type = type,
-            let dateText = dateText{
-            //  建立新支出
-            if let context = incomeVC?.context{
-                let newIncome = Income(context: context)
-                newIncome.money = money
-                newIncome.type = type
-                newIncome.date = dateText
-                //  把新支出加入陣列中
-                incomeVC?.allIncomeArray.append(newIncome)
-                incomeVC?.saveIncome()
-                incomeVC?.currentDateIncomeArray.append(newIncome)
-                
-                if let allIncomeArray = incomeVC?.allIncomeArray{
-                    var todayMoney: Int64 = 0
-                    for income in allIncomeArray{
-                        if income.date == dateText{
-                            todayMoney += income.money
-                        }
-                    }
-                    if let todayMoney = incomeVC?.formatter.string(from: NSNumber(value: todayMoney)){
-                        incomeVC?.totalIcomeLabel.text = "\(todayMoney)"
-                    }
-                }
-                
+        if let inputMoney = Int64(moneyTextfield.text!),
+            let typeText = type{
+            
+            let incomeVC = segue.destination as? IncomeViewController
+            if let indexPath = index{
+                incomeVC?.currentDateIncomeArray[indexPath.row].money = inputMoney
+                incomeVC?.currentDateIncomeArray[indexPath.row].type = typeText
+                incomeVC?.incomeTableView.reloadData()
+                incomeVC?.animateTableView()
             }
-            incomeVC?.incomeTableView.reloadData()
-            incomeVC?.animateTableView()
-        }
-        else{
-            let noMoneyAlert = UIAlertController(title: "請輸入金額", message: nil, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "確定", style: .default, handler: nil)
-            noMoneyAlert.addAction(okAction)
-            self.present(noMoneyAlert, animated: true, completion: nil)
+            incomeVC?.allIncomeArray[count].money = inputMoney
+            incomeVC?.allIncomeArray[count].type = typeText
+            incomeVC?.saveIncome()
+            //  改掉total的金額
+            if let currentDateIncomeArray = incomeVC?.currentDateIncomeArray{
+                var todayMoney: Int64 = 0
+                for income in currentDateIncomeArray{
+                    todayMoney += income.money
+                }
+                if let todayMoney = incomeVC?.formatter.string(from: NSNumber(value: todayMoney)){
+                    incomeVC?.totalIcomeLabel.text = "\(todayMoney)"
+                }
+            }
         }
     }
-    //隨便按一個地方，彈出鍵盤就會收回
+    //  隨便按一個地方，彈出鍵盤就會收回
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 }
-extension AddIncomeViewController: IGLDropDownMenuDelegate{
+
+extension EditIncomeViewController: IGLDropDownMenuDelegate{
     
-    func setupAddType(){
+    func setupEditType(){
         let typeDropDownItems: NSMutableArray = NSMutableArray()
         for i in 0...(typeArray.count-1) {
             let typeItem = IGLDropDownItem()
@@ -83,7 +71,6 @@ extension AddIncomeViewController: IGLDropDownMenuDelegate{
             //            typeDropDownMenu.menuIconImage = UIImage(named: "\(typeText)")
             typeDropDownMenu.menuText = "\(typeText)"
         }
-        typeDropDownMenu.menuText = "Choose Type"
         typeDropDownMenu.dropDownItems = typeDropDownItems as [AnyObject]
         typeDropDownMenu.paddingLeft = 15
         typeDropDownMenu.frame = CGRect(x: 120, y: 180, width: 180, height: 45)

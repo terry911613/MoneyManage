@@ -8,4 +8,6 @@ target 'MoneyManage' do
   # Pods for MoneyManage
 
     pod 'IGLDropDownMenu'
+    pod "ViewAnimator"
+    pod 'Charts'
 end

@@ -1,16 +1,15 @@
 //
-//  AddExpenditureViewController.swift
+//  EditExpenditureViewController.swift
 //  MoneyManage
 //
-//  Created by 李泰儀 on 2019/4/5.
+//  Created by 李泰儀 on 2019/5/2.
 //  Copyright © 2019 TerryLee. All rights reserved.
 //
 
 import UIKit
-import CoreData
 import IGLDropDownMenu
 
-class AddExpenditureViewController: UIViewController {
+class EditExpenditureViewController: UIViewController {
     
     @IBOutlet weak var moneyTextfield: UITextField!
     
@@ -18,74 +17,62 @@ class AddExpenditureViewController: UIViewController {
     var typeDetailDropDownMenu = IGLDropDownMenu()
     var typeArray: NSArray = ["食", "衣", "住", "行", "育", "樂"]
     var typeDetailDic: [String : NSArray] = ["食" : ["早餐", "午餐", "下午茶", "晚餐", "零食", "其他"],
-                                       "衣" : ["服飾", "鞋子", "其他"],
-                                       "住" : ["房租", "水費", "電費", "其他"],
-                                       "行" : ["交通費", "其他"],
-                                       "育" : ["教育", "其他"],
-                                       "樂" : ["旅遊", "看電影", "其他"]]
+                                             "衣" : ["服飾", "鞋子", "其他"],
+                                             "住" : ["房租", "水費", "電費", "其他"],
+                                             "行" : ["交通費", "其他"],
+                                             "育" : ["教育", "其他"],
+                                             "樂" : ["旅遊", "看電影", "其他"]]
     var type: String?
     var typeDetail: String?
-    var dateText: String?
     var isSelectType = false
-    
+    var index: IndexPath?
+    var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let expenditureVC = segue.destination as? ExpenditureViewController
-        
-        if let money = Int64(moneyTextfield.text!),
-            let type = type,
-            let typeDetail = typeDetail,
-            let dateText = dateText{
-            //  建立新支出
-            if let context = expenditureVC?.context{
-                let newExpenditure = Expenditure(context: context)
-                newExpenditure.money = money
-                newExpenditure.type = type
-                newExpenditure.typeDetail = typeDetail
-                newExpenditure.date = dateText
-                //  把新支出加入陣列中
-                expenditureVC?.allExpenditureArray.append(newExpenditure)
-                expenditureVC?.saveExpenditures()
-                expenditureVC?.currentDateExpenditureArray.append(newExpenditure)
-                
-                if let allExpenditureArray = expenditureVC?.allExpenditureArray{
-                    var todayMoney: Int64 = 0
-                    for expenditure in allExpenditureArray{
-                        if expenditure.date == dateText{
-                            todayMoney += expenditure.money
-                        }
-                    }
-                    if let todayMoney = expenditureVC?.formatter.string(from: NSNumber(value: todayMoney)){
-                        expenditureVC?.totalExpenditureLabel.text = "\(todayMoney)"
-                    }
-                }
-                
+        if let inputMoney = Int64(moneyTextfield.text!),
+            let typeText = type,
+            let typeDetailText = typeDetail{
+            
+            let expenditureVC = segue.destination as? ExpenditureViewController
+            if let indexPath = index{
+                expenditureVC?.currentDateExpenditureArray[indexPath.row].money = inputMoney
+                expenditureVC?.currentDateExpenditureArray[indexPath.row].type = typeText
+                expenditureVC?.currentDateExpenditureArray[indexPath.row].typeDetail = typeDetailText
+                expenditureVC?.expenditureTableView.reloadData()
+                expenditureVC?.animateTableView()
             }
-            expenditureVC?.expenditureTableView.reloadData()
-            expenditureVC?.animateTableView()
-        }
-        else{
-            let noMoneyAlert = UIAlertController(title: "請輸入金額", message: nil, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "確定", style: .default, handler: nil)
-            noMoneyAlert.addAction(okAction)
-            self.present(noMoneyAlert, animated: true, completion: nil)
+            expenditureVC?.allExpenditureArray[count].money = inputMoney
+            expenditureVC?.allExpenditureArray[count].type = typeText
+            expenditureVC?.allExpenditureArray[count].typeDetail = typeDetailText
+            expenditureVC?.saveExpenditures()
+            
+            //  改掉total的金額
+            if let currentDateExpenditureArray = expenditureVC?.currentDateExpenditureArray{
+                var todayMoney: Int64 = 0
+                for expenditure in currentDateExpenditureArray{
+                    todayMoney += expenditure.money
+                }
+                if let todayMoney = expenditureVC?.formatter.string(from: NSNumber(value: todayMoney)){
+                    expenditureVC?.totalExpenditureLabel.text = "\(todayMoney)"
+                }
+            }
         }
     }
     //  隨便按一個地方，彈出鍵盤就會收回
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
 }
-extension AddExpenditureViewController: IGLDropDownMenuDelegate{
+
+extension EditExpenditureViewController: IGLDropDownMenuDelegate{
     
-    func setupTypeInit(){
+    func setupEditType(){
         let typeDropDownItems: NSMutableArray = NSMutableArray()
-        
         for i in 0...(typeArray.count-1) {
             let typeItem = IGLDropDownItem()
             typeItem.iconImage = UIImage(named: "\(typeArray[i])")
@@ -93,7 +80,10 @@ extension AddExpenditureViewController: IGLDropDownMenuDelegate{
             typeItem.showBackgroundShadow = true
             typeDropDownItems.add(typeItem)
         }
-        typeDropDownMenu.menuText = "Choose Type"
+        if let typeText = type{
+            typeDropDownMenu.menuIconImage = UIImage(named: "\(typeText)")
+            typeDropDownMenu.menuText = "\(typeText)"
+        }
         typeDropDownMenu.dropDownItems = typeDropDownItems as [AnyObject]
         typeDropDownMenu.paddingLeft = 15
         typeDropDownMenu.frame = CGRect(x: 15, y: 180, width: 180, height: 45)
@@ -104,30 +94,28 @@ extension AddExpenditureViewController: IGLDropDownMenuDelegate{
         typeDropDownMenu.rotate = .random
         typeDropDownMenu.shouldFlipWhenToggleView = true
         typeDropDownMenu.reloadView()
-        
         self.view.addSubview(self.typeDropDownMenu)
     }
     
-    func setupTypeDetailInit(){
+    func setupEditTypeDetail(){
         let typeDetailDropDownItems:NSMutableArray = NSMutableArray()
-        
-        if let type = type{
-            if let no = typeDetailDic[type]{
-                for i in 0...(no.count-1) {
-                    let typeDetailItem = IGLDropDownItem()
-                    if let typeDetailText = typeDetailDic[type]{
-                        typeDetailItem.text = "\(typeDetailText[i])"
+        if let typeDetailText = typeDetail{
+            typeDetailDropDownMenu.menuText = "\(typeDetailText)"
+            if let typeText = type{
+                if let typeDetailArray: NSArray = typeDetailDic[typeText]{
+                    for i in 0...(typeDetailArray.count-1) {
+                        let typeDetailItem = IGLDropDownItem()
+                        typeDetailItem.text = "\(typeDetailArray[i])"
                         typeDetailItem.showBackgroundShadow = true
                         typeDetailDropDownItems.add(typeDetailItem)
                     }
                 }
+                
             }
         }
-        
-        typeDetailDropDownMenu.menuText = "Choose TypeDetail"
         typeDetailDropDownMenu.dropDownItems = typeDetailDropDownItems as [AnyObject]
         typeDetailDropDownMenu.paddingLeft = 15
-        typeDetailDropDownMenu.frame = CGRect(x: 209, y: 180, width: 180, height: 45)
+        typeDetailDropDownMenu.frame = CGRect(x: 220, y: 180, width: 180, height: 45)
         typeDetailDropDownMenu.delegate = self
         typeDetailDropDownMenu.type = .stack
         typeDetailDropDownMenu.gutterY = 5
@@ -135,7 +123,6 @@ extension AddExpenditureViewController: IGLDropDownMenuDelegate{
         typeDetailDropDownMenu.rotate = .random
         typeDetailDropDownMenu.shouldFlipWhenToggleView = true
         typeDetailDropDownMenu.reloadView()
-        
         self.view.addSubview(self.typeDetailDropDownMenu)
     }
     
@@ -146,9 +133,10 @@ extension AddExpenditureViewController: IGLDropDownMenuDelegate{
             if let typeText = typeItem.text{
                 type = typeText
                 isSelectType = true
-                print(typeText)
                 if isSelectType {
-                    setupTypeDetailInit()
+                    setupEditTypeDetail()
+                    typeDetailDropDownMenu.menuText = "Choose TypeDetail"
+                    typeDetailDropDownMenu.reloadView()
                     isSelectType = false
                 }
             }
@@ -157,9 +145,10 @@ extension AddExpenditureViewController: IGLDropDownMenuDelegate{
             let typeDetailItem: IGLDropDownItem = typeDetailDropDownMenu.dropDownItems[index] as! IGLDropDownItem
             if let typeDetailText = typeDetailItem.text{
                 typeDetail = typeDetailText
-                print(typeDetailText)
             }
         }
         
     }
+    
 }
+
